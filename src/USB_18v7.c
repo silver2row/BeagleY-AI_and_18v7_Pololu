@@ -124,15 +124,14 @@ int main()
  
   int speed = smcGetTargetSpeed(fd);
   printf("Current Target Speed is %d.\n", speed);
-  usleep(90000);
+  usleep(9000000);
  
   int newSpeed = (speed <= 0) ? 3200 : -3200;
   printf("Setting Target Speed to %d.\n", newSpeed);
   smcSetTargetSpeed(fd, newSpeed);
-  usleep(90000);
-  
+  usleep(9000000);
+
   smcSetTargetSpeed(fd, newSpeed = 0);
- 
   close(fd);
   return 0;
 }
